@@ -1,9 +1,10 @@
 Surveyor::Application.routes.draw do
   get "welcome", :to => 'welcome#index', :as => :welcome
   post "welcome/verify", :to => 'welcome#verify', :as => :verify
-  get "welcome/:code/take", :to => 'welcome#new', :as => :take_survey
   match "welcome/:code/submit", :to => 'welcome#create', :as => :submit_survey
-  get "welcome/thanks", :to => 'welcome#thanks', :as => :thanks
+  get "welcome/:code/thanks", :to => 'welcome#thanks', :as => :thanks
+  get "welcome/:code", :to => 'welcome#new', :as => :take_survey
+
 
   resources :surveys do
     as_routes

@@ -27,9 +27,11 @@ class WelcomeController < ApplicationController
   def create
     @survey = Survey.find_by_code(params[:code])
 
+    # Log that we've completed the survey
+    @survey.completed_at = DateTime.now
     respond_to do |format|
       if @survey.update_attributes(params[:survey])
-        format.html { redirect_to thanks_url, :notice => 'Survey was successfully created!' }
+        format.html { redirect_to thanks_url(@survey.code), :notice => 'Survey was successfully created!' }
         format.json { render :json => @survey, :status => :created, :location => @survey }
       else
         format.html { render :action => "new" }

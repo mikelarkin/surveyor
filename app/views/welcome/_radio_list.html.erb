@@ -1,6 +1,11 @@
-<span>Strongly Agree</span>
-<% ['5', '4', '3', '2', '1'].each do |value| %>
-    <br><%= f.radio_button field, value %>
-    <%= f.label "#{field}_#{value}", value.to_s %>
-<% end %>
-<span>Strongly Disagree</span>
+<%= f.radio_button field, 5 %>
+<%= f.label "#{field}_5", "Strongly Agree" %>
+<%= f.radio_button field, 4 %>
+<%= f.label "#{field}_4", "Agree" %>
+<%= f.radio_button field, 3 %>
+<%= f.label "#{field}_3", "Neutral" %>
+<%= f.radio_button field, 2 %>
+<%= f.label "#{field}_2", "Disagree" %>
+<%= f.radio_button field, 1 %>
+<%= f.label "#{field}_1", "Strongly Disagree" %>
+

@@ -1,41 +1,17 @@
-<h1>EAST TENNESSEE STATE UNIVERSITY</h1>
-<h2>INSTITUTIONAL REVIEW BOARD</h2>
+<!-- START TOPPER -->
+<div id="topper">
+  <div id="finder">
+    <h3>EAST TENNESSEE STATE UNIVERSITY</h3>
 
-<h3>PURPOSE:</h3>
-<p>
-  The purpose of this research study is to explore the leadership traits of the school health coordinators in the state of Tennessee. By determining their self-perception of their own leadership
-  traits compared to that of their supervisors and colleagues, this research may help improve hiring practices, training, and continuing education of current and future school health coordinators.
-</p>
+    <h1>INSTITUTIONAL REVIEW BOARD</h1>
+  </div>
+</div>
+<!-- END TOPPER -->
+<!-- START COLS -->
+<div id="cols" class="clear">
 
-<h3>DURATION</h3>
-
-<p>
-  This 15 question survey should only take about 10 to 15 minutes to complete.
-</p>
-
-<h3>POSSIBLE RISKS/DISCOMFORTS</h3>
-
-<p>There are no known or expected risks/discomforts.</p>
-
-<h3>POSSIBLE BENEFITS</h3>
-
-<p>There is no direct benefit to you participating in this research.</p>
-<p>The possible benefits of your participation are to improve hiring, training, and continuing education courses for school health coordinators.</p>
-
-<h3>VOLUNTARY PARTICIPATION</h3>
-
-<p>Participation in this research experiment is voluntary.</p>
-
-<h3>CONTACT FOR QUESTIONS</h3>
-
-<p>If you have any questions, problems at any time, you may call Kate Strickland, MPH at 423-483-5785, or Jasmine Renner, PhD at 423-439-7629. You may call the Chairman of the Institutional Review
-  Board at 423/439-6054 for any questions you may have about your rights as a research subject. If you have any questions or concerns about the research and want to talk to someone independent of the
-  research team or you can’t reach the study staff, you may call an IRB Coordinator at 423/439-6055 or 423/439/6002.</p>
-
-
-<p>By completing this survey, you confirm that you have read this document. You freely and voluntarily choose to be in this research project. Thank you.</p>
-
-<%= form_tag(:controller => "welcome", :action => "verify") do %>
+  <!-- START MAIN -->
+  <div id="main">
     <% if @survey.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being started:</h2>
@@ -47,12 +23,71 @@
           </ul>
         </div>
     <% end %>
-    <div class="field">
-      <%= label_tag :code, "Please enter the code you were sent via email:" %>
-      <br/>
-      <%= text_field_tag :code %>
+
+    <h3 class="first">PURPOSE:</h3>
+
+    <p>
+      The purpose of this research study is to explore the leadership traits of the school health coordinators in the state of Tennessee. By determining their self-perception of their own leadership
+      traits compared to that of their supervisors and colleagues, this research may help improve hiring practices, training, and continuing education of current and future school health
+      coordinators.
+    </p>
+
+    <h3>DURATION</h3>
+
+    <p>
+      This 15 question survey should only take about 10 to 15 minutes to complete.
+    </p>
+
+    <h3>POSSIBLE RISKS/DISCOMFORTS</h3>
+
+    <p>There are no known or expected risks/discomforts.</p>
+
+    <h3>POSSIBLE BENEFITS</h3>
+
+    <p>There is no direct benefit to you participating in this research.</p>
+
+    <p>The possible benefits of your participation are to improve hiring, training, and continuing education courses for school health coordinators.</p>
+
+    <h3>VOLUNTARY PARTICIPATION</h3>
+
+    <p>Participation in this research experiment is voluntary.</p>
+
+    <h3>CONTACT FOR QUESTIONS</h3>
+
+    <p>If you have any questions, problems at any time, you may call Kate Strickland, MPH at 423-483-5785, or Jasmine Renner, PhD at 423-439-7629. You may call the Chairman of the Institutional
+      Review
+      Board at 423/439-6054 for any questions you may have about your rights as a research subject. If you have any questions or concerns about the research and want to talk to someone independent
+      of
+      the
+      research team or you can’t reach the study staff, you may call an IRB Coordinator at 423/439-6055 or 423/439/6002.</p>
+
+
+    <p>By completing this survey, you confirm that you have read this document. You freely and voluntarily choose to be in this research project. Thank you.</p>
+
+    <div class="verification">
+      <%= form_tag(:controller => "welcome", :action => "verify") do %>
+          <% if @survey.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being started:</h2>
+
+                <ul>
+                  <% @survey.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+          <% end %>
+          <div class="field clear">
+            <%= label_tag :code, "Please enter the code you were sent via email:" %>
+            <br/>
+            <%= text_field_tag :code %>
+          </div>
+          <div class="actions ">
+            <%= submit_tag("Start the Survey") %>
+          </div>
+      <% end %>
     </div>
-    <div class="actions">
-        <%= submit_tag("Start the Survey") %>
-      </div>
-<% end %>
+  </div>
+  <!-- END MAIN -->
+</div>
+<!-- END COLS -->

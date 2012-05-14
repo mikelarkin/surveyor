@@ -1,3 +1,276 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* @group Reset */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  line-height: 1.22em;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+a:active, a:focus, input[type="image"] {
+  outline: 0;
+}
+
+a img, :link img, :visited img {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+}
+
+h1, h2, h3, h4, h5, h6, label, strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+input, select {
+  margin: 0;
+}
+
+/* @end */
+
+/* @group Global */
+
+body {
+  color: #444;
+  font-family: Arial, Verdana, sans-serif;
+  background: #e8e8e8 url(../assets/body.png) repeat;
+  padding-bottom: 80px;
+}
+
+div.wrapper {
+  width: 900px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+div.content {
+  background: url(../assets/content.png) repeat-x;
+  min-width: 930px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.clear {
+  display: inline-block;
+}
+
+.clear {
+  display: block;
+}
+
+.clear:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+a {
+  color: #76bcdb;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* @group Topper */
+
+div#topper {
+  padding: 35px 0 0 35px;
+}
+
+div#topper p {
+  color: #76a739;
+  font-size: 11px;
+  text-align: right;
+  padding-bottom: 12px;
+}
+
+div#topper p a {
+  color: #76a739;
+}
+
+div#topper h4 {
+  color: #257597;
+  font: 13px "American Typewriter", Georgia, serif;
+  background-color: #8ed1ee;
+  padding: 22px 35px 20px;
+  border-bottom: 2px solid #6bb2d1;
+}
+
+div#topper h4 a {
+  color: #257597;
+}
+
+div#finder {
+  background-color: #8ed1ee;
+  padding: 25px;
+  border-bottom: 2px solid #6bb2d1;
+}
+
+div#finder label {
+  color: #257597;
+  font: normal 18px "American Typewriter", Georgia, serif;
+  padding: 0 6px 4px;
+  display: block;
+}
+
+div#finder div.bg {
+  background-color: #76bcdb;
+  padding: 5px;
+  float: left;
+  border-radius: 5px;
+}
+
+div#finder input:focus {
+  outline: none;
+}
+
+div#finder h6 {
+  color: #e7f6fd;
+  font-size: 11px;
+  font-weight: normal;
+  padding: 5px 6px 0;
+}
+
+/* @group Main */
+
+div#error_explanation {
+  margin: 10px 0 10px 0;
+  padding: 10px 10px 10px 10px;
+  background-color: #ff0000;
+  color: #ffffff;
+}
+
+div#cols {
+  background: url(../assets/main.png) repeat-y right 0;
+}
+
+div#main {
+  background-color: #fff;
+  width: 815px;
+  min-height: 300px;
+  height: auto !important;
+  height: 300px;
+  padding: 33px 25px 45px;
+  float: right;
+}
+
+div#main h3 {
+  margin-top: 25px;
+  margin-bottom: 5px;
+  font-weight: bold;
+
+}
+
+div#main h3.first {
+  margin-top: 5px;
+}
+
+div#main p {
+  padding-left: 15px;
+  margin-bottom: 5px;
+  text-align: justify;
+}
+
+div.title {
+  padding: 0 10px 10px;
+  border-bottom: 1px solid #c1c1c1;
+}
+
+div.title h1, div.title h2 {
+  font: normal 24px "American Typewriter", Georgia, serif;
+  float: left;
+}
+
+div.title h2 {
+  padding-top: 35px;
+}
+
+div.verification {
+  margin-top: 20px;
+  padding: 20px 0px 10px;
+  border-top: 1px solid #c1c1c1;
+}
+
+div#extra_questions {
+  
+}
+
+div.field, div.radio {
+  margin-bottom: 20px;
+}
+
+div.field input, div.radio input {
+  color: #444;
+  font: 12px Arial, Verdana, sans-serif;
+  background-color: #fff;
+  width: 300px;
+  padding: 6px;
+  border: 1px solid #bbb;
+}
+
+div.radio input {
+  width: 10px;
+}
+
+div.radio label {
+  font-weight: normal;
+  color: #444;
+  padding-right: 6px;
+}
+
+div.radio label.question {
+  font-weight: bold;
+  color: #444;
+}
+
+div.actions {
+  border-top: 1px #999 solid;
+  padding-top: 10px;
+  margin-top: 20px;
+
+}
+
+div.actions input {
+  color: #fff;
+  font: 12px Arial, Verdana, sans-serif;
+  background-color: #257597;
+  width: 200px;
+  padding: 6px;
+  float: left;
+  border: 1px solid #bbb;
+}
+
+/* @end */

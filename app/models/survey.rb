@@ -21,7 +21,7 @@ class Survey < ActiveRecord::Base
 
 
   def sch?
-    return false
+    question_02 == ""
   end
 
   def self.generate(number)
