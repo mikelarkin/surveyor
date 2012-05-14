@@ -1,0 +1,151 @@
+<%= form_for(@survey, :url => submit_survey_path(:code => @survey.code)) do |f| %>
+
+    <h1>EAST TENNESSEE STATE UNIVERSITY</h1>
+    <h2>INSTITUTIONAL REVIEW BOARD</h2>
+    <% if @survey.errors.any? %>
+           <div id="error_explanation">
+             <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being completed:</h2>
+
+             <ul>
+               <% @survey.errors.full_messages.each do |msg| %>
+                   <li><%= msg %></li>
+               <% end %>
+             </ul>
+           </div>
+       <% end %>
+    <div class="container">
+      <div class="field">
+        <%= f.label :question_01, "1. What school district are you working in?" %>
+        <br/>
+        <%= f.text_field :question_01 %>
+      </div>
+      <div class="field">
+        <%= f.label :question_02, "2. What is your position?" %>
+        <br/>
+        <%= f.select(:question_02, ["Principal", "Superintendent", "Health School Council Member", "School Health Coordinator"]) %>
+      </div>
+      <hr/>
+      <div class="field">
+        <%= f.label :question_03, "3. Are you in a city or county school system?" %>
+        <br/>
+        <%= f.select(:question_03, ["City", "County"]) %>
+      </div>
+      <div class="field">
+        <%= f.label :question_04, "4. What is your type of education?" %>
+        <br/>
+        <%= f.select(:question_04, ["Nursing", "Business", "Education", "Nutrition", "Public Health", "Other"]) %>
+      </div>
+      <div class="field">
+        <%= f.label :question_05, "5. How many years experience do you have working in the school system?" %>
+        <br/>
+        <%= f.text_field :question_05 %>
+      </div>
+      <div class="field">
+        <%= f.label :question_06, "6. How many professional organizations are you a member of?" %>
+        <br/>
+        <%= f.text_field :question_06 %>
+      </div>
+      <hr/>
+      <div class="instruct"> The following questions are to measure personal characteristics of leadership. For each adjective listed below,
+        indicate the degree to which you think the adjective describes your
+        School
+        Health
+        Coordinator or if you are the SHC than as it describes you as a leader. Please, select the following responses to indicate the strength of your opinion.
+      </div>
+      <div class="key">
+        Key: 5=Strongly agree 4=Agree 3=Neutral 2=Disagree 1=Strongly disagree
+      </div>
+
+      <div class="field">
+        <%= f.label :question_07, "7. Articulate: Communicates effectively with others" %>
+        <br/>
+        <%= render :partial => "radio_list", :locals => {:field => "question_07", :f => f} %>
+      </div>
+      <div class="field">
+        <%= f.label :question_08, "8. Perceptive: Discerning and insightful" %>
+        <br/>
+        <%= render :partial => "radio_list", :locals => {:field => "question_08", :f => f} %>
+      </div>
+      <div class="field">
+        <%= f.label :question_09, "9. Self-confident: Believes in oneself and one's ability" %>
+        <br/>
+        <%= render :partial => "radio_list", :locals => {:field => "question_09", :f => f} %>
+      </div>
+      <div class="field">
+        <%= f.label :question_10, "10. Self-assured: Secure with self, free of doubts" %>
+        <br/>
+        <%= render :partial => "radio_list", :locals => {:field => "question_10", :f => f} %>
+      </div>
+      <div class="field">
+        <%= f.label :question_11, "11. Persistent: Stays fixed on goals despite interference" %>
+        <br/>
+        <%= render :partial => "radio_list", :locals => {:field => "question_11", :f => f} %>
+      </div>
+      <div class="field">
+        <%= f.label :question_12, "12. Determined: Takes a firm stand, acts with certainty" %>
+        <br/>
+        <%= render :partial => "radio_list", :locals => {:field => "question_12", :f => f} %>
+      </div>
+      <div class="field">
+        <%= f.label :question_13, "13. Trustworthy: Act believably, inspires confidence" %>
+        <br/>
+        <%= render :partial => "radio_list", :locals => {:field => "question_13", :f => f} %>
+      </div>
+      <div class="field">
+        <%= f.label :question_14, "14. Dependable: Is consistent and reliable" %>
+        <br/>
+        <%= render :partial => "radio_list", :locals => {:field => "question_14", :f => f} %>
+      </div>
+      <div class="field">
+        <%= f.label :question_15, "15. Friendly: Shows kindness and warmth" %>
+        <br/>
+        <%= render :partial => "radio_list", :locals => {:field => "question_15", :f => f} %>
+      </div>
+      <div class="field">
+        <%= f.label :question_16, "16. Outgoing: Talks freely, gets along well with others" %>
+        <br/>
+        <%= render :partial => "radio_list", :locals => {:field => "question_16", :f => f} %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    </div>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
