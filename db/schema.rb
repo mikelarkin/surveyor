@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120514135214) do
+ActiveRecord::Schema.define(:version => 20120530040801) do
 
   create_table "surveys", :force => true do |t|
     t.string   "title"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20120514135214) do
     t.datetime "completed_at"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "question_17"
   end
 
   add_index "surveys", ["code"], :name => "index_surveys_on_code", :unique => true

@@ -1,5 +1,5 @@
 class Survey < ActiveRecord::Base
-  attr_accessible :code, :description, :question_01, :question_10, :question_11, :question_12, :question_13, :question_14, :question_15, :question_16, :question_02, :question_03, :question_04, :question_05, :question_06, :question_07, :question_08, :question_09, :title
+  attr_accessible :code, :description, :question_01, :question_10, :question_11, :question_12, :question_13, :question_14, :question_15, :question_16, :question_17, :question_02, :question_03, :question_04, :question_05, :question_06, :question_07, :question_08, :question_09, :title
 
 
   validates_presence_of :question_01
@@ -8,7 +8,7 @@ class Survey < ActiveRecord::Base
   validates_presence_of :question_04, :if => :sch?
   validates_presence_of :question_05, :if => :sch?
   validates_presence_of :question_06, :if => :sch?
-  validates_presence_of :question_07
+  validates_presence_of :question_07, :if => :sch?
   validates_presence_of :question_08
   validates_presence_of :question_09
   validates_presence_of :question_10
@@ -18,10 +18,11 @@ class Survey < ActiveRecord::Base
   validates_presence_of :question_14
   validates_presence_of :question_15
   validates_presence_of :question_16
+  validates_presence_of :question_17
 
 
   def sch?
-    question_02 == ""
+    question_02 == "School Health Coordinator"
   end
 
   def self.generate(number)

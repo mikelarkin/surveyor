@@ -26,9 +26,9 @@
           <div class="field clear">
             <%= f.label :question_02, "What is your position?" %>
             <br/>
-            <%= f.select(:question_02, ["Principal", "Superintendent", "Health School Council Member", "School Health Coordinator"]) %>
+            <%= f.select(:question_02, ["Principal", "Superintendent", "Health School Council Member", "School Health Coordinator"], {}, {:class => "toggler"}) %>
           </div>
-          <div id="extra_questions">
+          <div id="extra_questions" class="hide">
             <div class="field clear">
               <%= f.label :question_03, "Are you in a city or county school system?", :class => "question" %>
               <br/>
@@ -49,60 +49,65 @@
               <br/>
               <%= f.text_field :question_06 %>
             </div>
+            <div class="field clear">
+              <%= f.label :question_07, "How many schools are within your system?", :class => "question" %>
+              <br/>
+              <%= f.text_field :question_07 %>
+            </div>
           </div>
           <div class="field clear"> The following questions are to measure personal characteristics of leadership. For each adjective listed below,
             indicate the degree to which you think the adjective describes your School Health Coordinator or if you are the SHC than as it describes you as a leader. Please, select the following
             responses to indicate the strength of your opinion.
           </div>
           <div class="radio clear">
-            <%= f.label :question_07, "Articulate: Communicates effectively with others", :class => "question" %>
-            <br/>
-            <%= render :partial => "radio_list", :locals => {:field => "question_07", :f => f} %>
-          </div>
-          <div class="radio clear">
-            <%= f.label :question_08, "Perceptive: Discerning and insightful", :class => "question" %>
+            <%= f.label :question_08, "Articulate: Communicates effectively with others", :class => "question" %>
             <br/>
             <%= render :partial => "radio_list", :locals => {:field => "question_08", :f => f} %>
           </div>
           <div class="radio clear">
-            <%= f.label :question_09, "Self-confident: Believes in oneself and one's ability", :class => "question" %>
+            <%= f.label :question_09, "Perceptive: Discerning and insightful", :class => "question" %>
             <br/>
             <%= render :partial => "radio_list", :locals => {:field => "question_09", :f => f} %>
           </div>
           <div class="radio clear">
-            <%= f.label :question_10, "Self-assured: Secure with self, free of doubts", :class => "question" %>
+            <%= f.label :question_10, "Self-confident: Believes in oneself and one's ability", :class => "question" %>
             <br/>
             <%= render :partial => "radio_list", :locals => {:field => "question_10", :f => f} %>
           </div>
           <div class="radio clear">
-            <%= f.label :question_11, "Persistent: Stays fixed on goals despite interference", :class => "question" %>
+            <%= f.label :question_11, "Self-assured: Secure with self, free of doubts", :class => "question" %>
             <br/>
             <%= render :partial => "radio_list", :locals => {:field => "question_11", :f => f} %>
           </div>
           <div class="radio clear">
-            <%= f.label :question_12, "Determined: Takes a firm stand, acts with certainty", :class => "question" %>
+            <%= f.label :question_12, "Persistent: Stays fixed on goals despite interference", :class => "question" %>
             <br/>
             <%= render :partial => "radio_list", :locals => {:field => "question_12", :f => f} %>
           </div>
           <div class="radio clear">
-            <%= f.label :question_13, "Trustworthy: Act believably, inspires confidence", :class => "question" %>
+            <%= f.label :question_13, "Determined: Takes a firm stand, acts with certainty", :class => "question" %>
             <br/>
             <%= render :partial => "radio_list", :locals => {:field => "question_13", :f => f} %>
           </div>
           <div class="radio clear">
-            <%= f.label :question_14, "Dependable: Is consistent and reliable", :class => "question" %>
+            <%= f.label :question_14, "Trustworthy: Act believably, inspires confidence", :class => "question" %>
             <br/>
             <%= render :partial => "radio_list", :locals => {:field => "question_14", :f => f} %>
           </div>
           <div class="radio clear">
-            <%= f.label :question_15, "Friendly: Shows kindness and warmth", :class => "question" %>
+            <%= f.label :question_15, "Dependable: Is consistent and reliable", :class => "question" %>
             <br/>
             <%= render :partial => "radio_list", :locals => {:field => "question_15", :f => f} %>
           </div>
           <div class="radio clear">
-            <%= f.label :question_16, "Outgoing: Talks freely, gets along well with others", :class => "question" %>
+            <%= f.label :question_16, "Friendly: Shows kindness and warmth", :class => "question" %>
             <br/>
             <%= render :partial => "radio_list", :locals => {:field => "question_16", :f => f} %>
+          </div>
+          <div class="radio clear">
+            <%= f.label :question_17, "Outgoing: Talks freely, gets along well with others", :class => "question" %>
+            <br/>
+            <%= render :partial => "radio_list", :locals => {:field => "question_17", :f => f} %>
           </div>
           <div class="actions">
             <%= f.submit "Finish Survey" %>
