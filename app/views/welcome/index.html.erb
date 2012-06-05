@@ -79,7 +79,7 @@
           <div class="field clear">
             <%= label_tag :code, "Please enter the code you were sent via email:" %>
             <br/>
-            <%= text_field_tag :code %>
+            <%= text_field_tag :code, params[:code] %>
           </div>
           <div class="actions ">
             <%= submit_tag("Start the Survey") %>
