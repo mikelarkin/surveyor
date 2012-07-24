@@ -1,45 +1,21 @@
 ActiveAdmin.register Survey do
 
-  filter :code
-  filter :email
-  filter :completed_at
+  filter :created_at
 
   scope :all
-  scope :complete
-  scope :incomplete
-  scope :unassigned
-
 
   index do
-    column("Code", :sortable => :code) { |survey| link_to "#{survey.code} ", admin_survey_path(survey) }
-    column :email
-    column :completed_at
-    column("Send Email") { |survey| link_to "Send Email", send_email_admin_survey_path(survey) }
-    default_actions
+    column("ID", :sortable => :id) { |survey| link_to "#{survey.id} ", admin_survey_path(survey) }
+    column("Completed at", :sortable => :created_at) { |survey| link_to "#{survey.created_at.strftime("%m/%d/%y")} ", admin_survey_path(survey) }
+    default_action
   end
 
 
   ### Custom Actions ###
-
-  member_action :send_email do
-    @survey = Survey.find(params[:id])
-    @survey.send_email
-    redirect_to admin_surveys_path(notice: "Email sent")
-  end
-
-  collection_action :generate, :method => :post do
-    params[:email].split(",").each do |email|
-      Survey.generate(email)
-    end
-
-    redirect_to admin_surveys_path(notice: "Surveys created!")
-  end
-
-  show :title => lambda { |survey| "Survey #{survey.code}" } do
+  show :title => lambda { |survey| "Survey ##{survey.id}" } do
     attributes_table do
-      row :code
-      row :email
-      row :completed_at
+      row :id
+      row :created_at
       row :question_01
       row :question_02
       row :question_03

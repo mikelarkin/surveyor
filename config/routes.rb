@@ -4,10 +4,9 @@ Surveyor::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   get "welcome", :to => 'welcome#index', :as => :welcome
-  post "welcome/verify", :to => 'welcome#verify', :as => :verify
-  match "welcome/:code/submit", :to => 'welcome#create', :as => :submit_survey
-  get "welcome/:code/thanks", :to => 'welcome#thanks', :as => :thanks
-  get "welcome/:code", :to => 'welcome#new', :as => :take_survey
+  post "welcome/survey", :to => 'welcome#new', :as => :survey
+  match "welcome/submit", :to => 'welcome#create', :as => :submit
+  get "welcome/thanks", :to => 'welcome#thanks', :as => :thanks
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

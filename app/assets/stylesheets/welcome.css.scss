@@ -166,12 +166,14 @@ div#finder h6 {
 
 /* @group Main */
 
-div#error_explanation {
+div#error_explanation h2 {
   margin: 10px 0 10px 0;
   padding: 10px 10px 10px 10px;
   background-color: #ff0000;
   color: #ffffff;
 }
+
+
 
 div#cols {
   background: url(../assets/main.png) repeat-y right 0;

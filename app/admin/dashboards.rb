@@ -1,20 +1,11 @@
 ActiveAdmin::Dashboards.build do
 
   section "Recent Survey Completions", :priority => 1 do
-    table_for Survey.complete.order('completed_at desc').limit(10) do
-      column("Completed At") { |survey| survey.completed_at.strftime("%m/%d/%y") }
-      column("Code") { |survey| link_to(survey.code, admin_survey_path(survey.id)) }
-      column("Email")  {|survey| mail_to(survey.email, survey.email) }
+    table_for Survey.order('created_at desc').limit(10) do
+      column("ID") { |survey| survey.id }
+      column("Completed At") { |survey| survey.created_at.strftime("%m/%d/%y") }
     end
   end
-
-  section "Incomplete Surveys", :priority => 2 do
-    table_for Survey.incomplete.order('created_at desc').limit(10) do
-      column("Code") { |survey| survey.code }
-      column("Email")  {|survey| mail_to(survey.email, survey.email) }
-    end
-  end
-
 
   # Define your dashboard sections here. Each block will be
   # rendered on the dashboard in the context of the view. So just

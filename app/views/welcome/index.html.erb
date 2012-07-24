@@ -11,18 +11,6 @@
 
   <!-- START MAIN -->
   <div id="main">
-    <% if @survey.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being started:</h2>
-
-          <ul>
-            <% @survey.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
-
     <h3 class="first">PURPOSE:</h3>
 
     <p>
@@ -55,32 +43,17 @@
 
     <p>If you have any questions, problems at any time, you may call Kate Strickland, MPH at 423-483-5785, or Jasmine Renner, PhD at 423-439-7629. You may call the Chairman of the Institutional
       Review
-      Board at 423/439-6054 for any questions you may have about your rights as a research subject. If you have any questions or concerns about the research and want to talk to someone independent
+      Board at 423-439-6054 for any questions you may have about your rights as a research subject. If you have any questions or concerns about the research and want to talk to someone independent
       of
       the
-      research team or you can’t reach the study staff, you may call an IRB Coordinator at 423/439-6055 or 423/439/6002.</p>
+      research team or you can’t reach the study staff, you may call an IRB Coordinator at 423-439-6055 or 423-439-6002.</p>
 
 
-    <p>By completing this survey, you confirm that you have read this document. You freely and voluntarily choose to be in this research project. Thank you.</p>
 
     <div class="verification">
-      <%= form_tag(:controller => "welcome", :action => "verify") do %>
-          <% if @survey.errors.any? %>
-              <div id="error_explanation">
-                <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being started:</h2>
+      <%= form_tag(:controller => "welcome", :action => "new") do %>
+          <p>By completing this survey, you confirm that you have read this document. You freely and voluntarily choose to be in this research project. Thank you.</p>
 
-                <ul>
-                  <% @survey.errors.full_messages.each do |msg| %>
-                      <li><%= msg %></li>
-                  <% end %>
-                </ul>
-              </div>
-          <% end %>
-          <div class="field clear">
-            <%= label_tag :code, "Please enter the code you were sent via email:" %>
-            <br/>
-            <%= text_field_tag :code, params[:code] %>
-          </div>
           <div class="actions ">
             <%= submit_tag("Start the Survey") %>
           </div>

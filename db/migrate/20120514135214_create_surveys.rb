@@ -1,8 +1,6 @@
 class CreateSurveys < ActiveRecord::Migration
   def change
     create_table :surveys do |t|
-      t.string :code
-      t.string :email
       t.string :question_01
       t.string :question_02
       t.string :question_03
@@ -21,9 +19,7 @@ class CreateSurveys < ActiveRecord::Migration
       t.string :question_16
       t.string :question_17
 
-      t.datetime :completed_at
       t.timestamps
     end
-    add_index :surveys, :code, :unique => true
   end
 end

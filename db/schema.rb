@@ -47,8 +47,6 @@ ActiveRecord::Schema.define(:version => 20120605202225) do
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
   create_table "surveys", :force => true do |t|
-    t.string   "code"
-    t.string   "email"
     t.string   "question_01"
     t.string   "question_02"
     t.string   "question_03"
@@ -66,11 +64,8 @@ ActiveRecord::Schema.define(:version => 20120605202225) do
     t.string   "question_15"
     t.string   "question_16"
     t.string   "question_17"
-    t.datetime "completed_at"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
-
-  add_index "surveys", ["code"], :name => "index_surveys_on_code", :unique => true
 
 end

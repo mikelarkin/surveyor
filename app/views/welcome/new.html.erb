@@ -11,7 +11,7 @@
 <div id="cols" class="clear">
   <!-- START MAIN -->
   <div id="main">
-    <%= form_for(@survey, :url => submit_survey_path(:code => @survey.code)) do |f| %>
+    <%= form_for(@survey, :url => submit_path) do |f| %>
         <% if @survey.errors.any? %>
             <div id="error_explanation">
               <h2>Please answer every question</h2>
