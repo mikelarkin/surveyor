@@ -1,6 +1,8 @@
 ActiveAdmin.register Survey do
 
   filter :created_at
+  filter :question_01, :label => "District"
+  filter :question_02, :label => "Position"
 
   scope :all
 
