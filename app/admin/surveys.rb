@@ -7,7 +7,10 @@ ActiveAdmin.register Survey do
   index do
     column("ID", :sortable => :id) { |survey| link_to "#{survey.id} ", admin_survey_path(survey) }
     column("Completed at", :sortable => :created_at) { |survey| link_to "#{survey.created_at.strftime("%m/%d/%y")} ", admin_survey_path(survey) }
-    default_action
+    column("District", :sortable => :question_01)  { |survey| link_to "#{survey.question_01} ", admin_survey_path(survey) }
+    column("Position",  :sortable => :question_02)  { |survey| link_to "#{survey.question_02} ", admin_survey_path(survey) }
+
+    default_actions
   end
 
 
