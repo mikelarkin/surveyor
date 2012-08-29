@@ -109,6 +109,11 @@
             <br/>
             <%= render :partial => "radio_list", :locals => {:field => "question_17", :f => f} %>
           </div>
+          <div class="field clear">
+            <%= f.label :human_check, "What is 2 + 3? (we ask this to make sure you are a human)", :class => "question" %>
+            <br/>
+            <%= f.text_field :human_check %>
+          </div>
           <div class="actions">
             <%= f.submit "Finish Survey" %>
           </div>

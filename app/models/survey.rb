@@ -1,5 +1,9 @@
 class Survey < ActiveRecord::Base
-  attr_accessible :question_01, :question_10, :question_11, :question_12, :question_13, :question_14, :question_15, :question_16, :question_17, :question_02, :question_03, :question_04, :question_05, :question_06, :question_07, :question_08, :question_09
+
+  attr_accessor :human_check
+
+  attr_accessible :question_01, :question_10, :question_11, :question_12, :question_13, :question_14, :question_15, :question_16, :question_17, :question_02, :question_03, :question_04, :question_05, :question_06, :question_07, :question_08, :question_09, :human_check
+
 
 
   validates_presence_of :question_01
@@ -19,6 +23,7 @@ class Survey < ActiveRecord::Base
   validates_presence_of :question_15
   validates_presence_of :question_16
   validates_presence_of :question_17
+  validates_inclusion_of :human_check, :in => %w(5 five)
 
   def sch?
     question_02 == "School Health Coordinator"
